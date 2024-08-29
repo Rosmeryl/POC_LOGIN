@@ -13,14 +13,14 @@ async function login(req, res) {
 
     const usuarioARevisar = usuarios.find(usuario => usuario.email === user);
     if (!usuarioARevisar) {
-        return res.status(400).send({ status: "Error", message: "Error durante el login" })
+        return res.status(400).send({ status: "Error", message: "Error durante el login1" })
           //  console.log(user);
     }
    
  
    const loginCorrecto = await bcryptjs.compare(password, usuarioARevisar.password);
     if (!loginCorrecto) {
-        return res.status(400).send({ status: "Error", message: "Error durante el login" })
+        return res.status(400).send({ status: "Error", message: "Error durante el login2" })
     }
     const token = jsonwebtoken.sign(
         { user: usuarioARevisar.user },
