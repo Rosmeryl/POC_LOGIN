@@ -27,7 +27,7 @@ async function login(req, res) {
         process.env.JWT_SECRET,
         { expiresIn: process.env.JWT_EXPIRATION })
 
-    const cookieOption = {
+    const cookieOption = { 
         expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000),  //conversion en dias 
         path: "/"
     }

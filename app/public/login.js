@@ -4,7 +4,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault();
         const user = e.target.children.user.value;
         const password = e.target.children.password.value;
-        const res = await fetch("/api/login", {
+        const res = await fetch("https://poc-login-3rgz.onrender.com/api/login", {
     method: "POST",
     headers: {
         "Content-Type": "application/json"

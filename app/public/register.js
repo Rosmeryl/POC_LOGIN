@@ -5,7 +5,7 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
     e.preventDefault();
     
 
-    const res = await fetch("/api/register", {
+    const res = await fetch("https://poc-login-3rgz.onrender.com/api/register", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
