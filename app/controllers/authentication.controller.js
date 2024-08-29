@@ -11,6 +11,7 @@ async function login(req, res) {
    const user = req.body.user;
    const password = req.body.password;
 
+    console.log(user)
     const usuarioARevisar = usuarios.find(usuario => usuario.email === user);
     if (!usuarioARevisar) {
         return res.status(400).send({ status: "Error", message: "Error durante el login1" })
@@ -59,7 +60,7 @@ async function register(req, res) {
     const nuevoUsuario = {
         user,email,password: hashPassword
     }
-    //console.log(nuevoUsuario);
+    console.log(nuevoUsuario);
     usuarios.push(nuevoUsuario);
 
    return res.status(201).send({ status: "ok", message: `Usuario ${nuevoUsuario.user} agregado`, redirect:"/"})
