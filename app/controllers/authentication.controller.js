@@ -12,6 +12,7 @@ async function login(req, res) {
    const password = req.body.password;
 
     console.log(user)
+    console.log(usuarios)
     const usuarioARevisar = usuarios.find(usuario => usuario.email === user);
     if (!usuarioARevisar) {
         return res.status(400).send({ status: "Error", message: "Error durante el login1" })
